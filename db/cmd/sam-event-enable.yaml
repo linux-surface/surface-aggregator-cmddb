@@ -1,0 +1,32 @@
+name: sam/event/enable
+description: Enable event using SAM event registry.
+
+request:
+  target-category: 0x01
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x0b
+
+payload:    # 5 bytes
+  - name: event-target-category
+    type: u8
+    desc: Target category of the event source.
+
+  - name: event-flags
+    type: u8
+    desc: Use 0x00 for unsequenced events, 0x01 for sequenced events.
+
+  - name: request-id
+    type: u16
+    desc: The request ID that will be used when sending the requested event.
+
+  - name: instance-id
+    type: u8
+    desc: |
+      Optional instance ID, can be omitted. Will be ignored for this event
+      interface. Preferably set this to zero.
+
+response:   # 1 byte
+  - name: status
+    type: u8
+    desc: Status of command. Zero on success, nonzero on failure.
