@@ -1,0 +1,13 @@
+name: sam/rtc/unix_time/set
+description: Set UNIX timestamp of real-time clock.
+
+request:
+  target-category: 0x01
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x0f
+
+payload:    # 4 bytes
+  - name: timestamp
+    type: u32
+    desc: UNIX timestamp in seconds since epoch (1970-01-01 00:00:00 UTC).

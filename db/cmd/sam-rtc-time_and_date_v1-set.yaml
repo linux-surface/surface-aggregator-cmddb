@@ -1,0 +1,63 @@
+name: sam/rtc/time_and_date_v1/set
+description: Set time and date of real-time clock (ver. 1 / ACPI).
+note: Modeled to conform to the ACPI RTC/TAD interface (ACPI000E).
+
+request:
+  target-category: 0x01
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x20
+
+payload:    # 16 bytes
+  - name: year
+    type: u16
+
+  - name: month
+    type: u8
+
+  - name: day
+    type: u8
+
+  - name: hour
+    type: u8
+
+  - name: minute
+    type: u8
+
+  - name: second
+    type: u8
+
+  - name: valid
+    type: u8
+    note: |
+      Ignored when using the 'set' command. Only relevant for the 'get'
+      command. Set this to zero.
+
+  - name: millisecond
+    type: u16
+    note: |
+      Values are ignored. ACPI RTC capabilities (_GCP) indicate that
+      milliseconds are not supported. Set this to zero.
+
+  - name: timezone
+    type: i16
+    desc: |
+      Timezone as offset from local time to UTC in minutes. Ranges from -1440
+      to +1440, i.e. -24h to +24h. As formula: `t_utc = t_local + timezone`.
+    note: |
+      While 'get-v1' always returns invalid (= 2047), this seems to set the
+      timezone that can be returned with 'get-v2'.
+
+  - name: dst
+    type: u8
+    desc: Daylight savings time flags. See ACPI RTC specification (ACPI000E).
+
+  - name: pad
+    type: (u8; 3)
+    desc: Padding. Set this to zero.
+
+response:   # 4 bytes
+  - name: status
+    type: u32
+    desc: |
+      Status of command. Zero indicates success, nonzero indicates failure.

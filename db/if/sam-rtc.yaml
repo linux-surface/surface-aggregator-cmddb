@@ -1,0 +1,21 @@
+name: sam/rtc
+
+requests:
+  - target-category: 0x01
+    command-ids:
+      - 0x0f to 0x10
+      - 0x1a to 0x20
+      - 0x22 to 0x23
+
+description: |
+  Persistent real-time clock (RTC) interface.
+
+  The RTC has multiple (sub-)interfaces, but only stores one set of values,
+  i.e. setting the clock via one interface (e.g. UNIX timestamp) impacts all
+  other interfaces (e.g. time-and-date v1 and v2).
+
+  The UNIX timestamp is tracked at UTC. Changing the time via the time-and-date
+  interface changes the UNIX timestamp under consideration of the specified
+  timezone value, keeping it at UTC while adjusting the time and date of the
+  time-and-date interface to show values in accordance with the current time
+  zone.

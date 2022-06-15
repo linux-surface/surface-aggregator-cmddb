@@ -1,0 +1,53 @@
+name: sam/rtc/time_and_date_v2/get
+description: Get time and date from real-time clock (ver. 2).
+
+request:
+  target-category: 0x01
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x22
+
+response:   # 20 bytes
+  - name: unknown1
+    type: u32
+    note: Might be status.
+
+  - name: year
+    type: u16
+
+  - name: month
+    type: u8
+
+  - name: day
+    type: u8
+
+  - name: hour
+    type: u8
+
+  - name: minute
+    type: u8
+
+  - name: seconds
+    type: u8
+
+  - name: unknown2
+    type: u8
+
+  - name: unknown3
+    type: u32
+
+  - name: timezone
+    type: i16
+    desc: |
+      Timezone as offset from local time to UTC in minutes. Ranges from -1440
+      to +1440, i.e. -24h to +24h. As formula: `t_utc = t_local + timezone`.
+
+  - name: dst
+    type: u8
+    desc: |
+      Daylight savings time flags as used in the ACPI RTC specification
+      (ACPI000E).
+
+  - name: pad
+    type: u8
+    note: Likely padding.

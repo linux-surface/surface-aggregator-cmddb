@@ -1,0 +1,55 @@
+name: sam/rtc/time_and_date_v2/set
+description: Set time and date of real-time clock (ver. 2).
+
+request:
+  target-category: 0x01
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x23
+
+payload:    # 16 bytes
+  - name: year
+    type: u16
+
+  - name: month
+    type: u8
+
+  - name: day
+    type: u8
+
+  - name: hour
+    type: u8
+
+  - name: minute
+    type: u8
+
+  - name: seconds
+    type: u8
+
+  - name: unknown2
+    type: u8
+
+  - name: unknown3
+    type: u32
+
+  - name: timezone
+    type: i16
+    desc: |
+      Timezone as offset from local time to UTC in minutes. Ranges from -1440
+      to +1440, i.e. -24h to +24h. As formula: `t_utc = t_local + timezone`.
+
+  - name: dst
+    type: u8
+    desc: Daylight savings time flags as used in the ACPI RTC specification.
+
+  - name: pad
+    type: u8
+    note: Likely padding. Set to zero.
+
+response:   # 4 bytes
+  - name: status
+    type: u32
+    desc: |
+      Status of the set operation. Zero on success, nonzero error code on
+      failure.
+    note: Might be signed.
