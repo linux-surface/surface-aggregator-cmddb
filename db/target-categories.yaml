@@ -1,0 +1,140 @@
+target-categories:
+  - name: SAM
+    id: 0x01
+    description: |
+      Generic system functionality. Includes event management and real-time
+      clock.
+
+  - name: BAT
+    id: 0x02
+    description: |
+      Battery and power supply subsystem.
+
+  - name: TMP
+    id: 0x03
+    description: |
+      Thermal subsystem. Temperature sensors and events.
+
+  - name: PMC
+    id: 0x04
+    description: |
+      Likely power management subsystem. Experiments show that this provides
+      commands for instant power-off and reboot/reset as well what seems to be
+      some (unknown) power-management related telemetry.
+
+  - name: FAN
+    id: 0x05
+
+  - name: PoM
+    id: 0x06
+
+  - name: DBG
+    id: 0x07
+
+  - name: KBD
+    id: 0x08
+    description: |
+      Legacy keyboard subsystem as found on the Surface Laptop 1 and Surface
+      Laptop 2. Represents a somewhat limited HID transport channel.
+
+  - name: FWU
+    id: 0x09
+
+  - name: UNI
+    id: 0x0a
+
+  - name: LPC
+    id: 0x0b
+
+  - name: TCL
+    id: 0x0c
+
+  - name: SFL
+    id: 0x0d
+
+  - name: KIP
+    id: 0x0e
+    description: |
+      Subsystem for managing detachable peripherals (Surface Pro X and Pro 8).
+
+  - name: EXT
+    id: 0x0f
+
+  - name: BLD
+    id: 0x10
+
+  - name: BAS
+    id: 0x11
+    description: |
+      Detachment system for Surface Book 2 and Book 3.
+
+  - name: SEN
+    id: 0x12
+
+  - name: SRQ
+    id: 0x13
+
+  - name: MCU
+    id: 0x14
+
+  - name: HID
+    id: 0x15
+    description: |
+      Generic HID input subsystem. Provides a HID transport channel for the
+      keyboard, touchpad, and associated devices on newer Surface models.
+
+  - name: TCH
+    id: 0x16
+
+  - name: BKL
+    id: 0x17
+
+  - name: TAM
+    id: 0x18
+
+  - name: ACC0
+    id: 0x19
+
+  - name: UFI
+    id: 0x1a
+
+  - name: USC
+    id: 0x1b
+
+  - name: PEN
+    id: 0x1c
+
+  - name: VID
+    id: 0x1d
+
+  - name: AUD
+    id: 0x1e
+
+  - name: SMC
+    id: 0x1f
+
+  - name: KPD
+    id: 0x20
+
+  - name: REG
+    id: 0x21
+    description: |
+      Extended event registry.
+
+  - name: SPT
+    id: 0x22
+
+  - name: SYS
+    id: 0x23
+
+  - name: ACC1
+    id: 0x24
+
+  - name: SHB
+    id: 0x25
+
+  - name: POS
+    id: 0x26
+    description:
+      Posture subsystem. Used to obtain posture/position of Surface Laptop
+      Studio screen.
