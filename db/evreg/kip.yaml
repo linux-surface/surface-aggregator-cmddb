@@ -1,0 +1,9 @@
+name: kip
+description: Event registry for KIP hot-plug devices.
+
+commands:
+  enable: kip/event/enable
+  disable: kip/event/disable
+
+properties:
+  per-instance: false

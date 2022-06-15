@@ -1,0 +1,9 @@
+name: sam
+description: Primary event registry.
+
+commands:
+  enable: sam/event/enable
+  disable: sam/event/disable
+
+properties:
+  per-instance: false

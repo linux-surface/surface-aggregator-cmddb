@@ -1,0 +1,12 @@
+name: reg
+description: Extended event registry.
+
+notes: 
+  Has been observed on target IDs 1 and 2. 
+
+commands:
+  enable: reg/event/enable
+  disable: reg/event/disable
+
+properties:
+  per-instance: true
