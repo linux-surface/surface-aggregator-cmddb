@@ -1,0 +1,20 @@
+name: pos/sources/list
+description: Get list of available posture source IDs.
+
+request:
+  target-category: 0x26
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x01
+
+response:   # min. 4 bytes
+  - name: length
+    type: u32
+    desc: Length of the following array.
+
+  - name: source-ids
+    desc: List of available source IDs.
+
+    type: array
+    size: length
+    element-type: u32

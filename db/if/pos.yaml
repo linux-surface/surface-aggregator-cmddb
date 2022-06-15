@@ -1,0 +1,38 @@
+name: pos
+
+requests:
+  - target-category: 0x26
+    command-ids:
+      - 0x01    # get list of available IDs
+      - 0x02    # get posture for ID
+
+events:
+  - target-category: 0x26
+    command-ids:
+      - 0x03    # posture change event
+
+description: |
+  Interface to obtain device posture information and receive notifications
+  about device posture changes.
+
+  Usage
+  -----
+
+  The posture subsystem seems to support multiple sensor/source IDs. A list of
+  available sources can be obtained via `pos/sources/list`. Posture values can
+  be queried via `pos/posture/get`, to which a valid source ID must be
+  provided. Therefore general usage is first getting/validating the source ID
+  and then getting the posture value using that ID.
+
+  Surface Laptop Studio
+  ---------------------
+
+  The Surface Laptop Studio seems to support a single posture source with ID 3.
+  Observed posture state values for this source are
+
+    | Value | Description                                         |
+    |-------|-----------------------------------------------------|
+    |     0 | Laptop mode with lid closed.                        |
+    |     1 | Laptop mode with lid open (i.e., normal operation). |
+    |     2 | Slate or flipped mode.                              |
+    |     3 | Tablet mode (flipped display, lid fully closed).    |

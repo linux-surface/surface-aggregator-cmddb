@@ -1,0 +1,18 @@
+name: pos/posture/get
+description: Get current device posture for specified source ID.
+
+request:
+  target-category: 0x26
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x02
+
+payload:    # 4 bytes
+  - name: source-id
+    type: u32
+    desc: The ID of the source to query.
+
+response:   # 4 bytes
+  - name: posture
+    type: u32
+    desc: Current posture value. Returns `U32_MAX` if source-id is invalid.
