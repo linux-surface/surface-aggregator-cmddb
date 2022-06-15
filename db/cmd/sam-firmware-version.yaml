@@ -1,0 +1,18 @@
+name: sam/firmware/version
+description: Query SAM firmware version.
+
+request:
+  target-category: 0x01
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x13
+
+response:   # 4 bytes, alternative interpretation: u32
+  - name: patch
+    type: u8
+
+  - name: minor
+    type: u16
+
+  - name: major
+    type: u8
