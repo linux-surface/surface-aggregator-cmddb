@@ -123,6 +123,8 @@ target-categories:
 
   - name: SPT
     id: 0x22
+    description: |
+      Surface Power Tracker.
 
   - name: SYS
     id: 0x23
