@@ -1,5 +1,6 @@
 name: sam/rtc/time_and_date_v2/get
 description: Get time and date from real-time clock (ver. 2).
+interface: sam/rtc
 
 request:
   target-category: 0x01

@@ -1,12 +1,5 @@
 name: sam/rtc
 
-requests:
-  - target-category: 0x01
-    command-ids:
-      - 0x0f to 0x10
-      - 0x1a to 0x20
-      - 0x22 to 0x23
-
 description: |
   Persistent real-time clock (RTC) interface.
 

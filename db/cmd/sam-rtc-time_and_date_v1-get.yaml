@@ -1,6 +1,7 @@
 name: sam/rtc/time_and_date_v1/get
 description: Get time and date from real-time clock (ver. 1 / ACPI).
 note: Modeled to conform to the ACPI RTC/TAD interface (ACPI000E).
+interface: sam/rtc
 
 request:
   target-category: 0x01

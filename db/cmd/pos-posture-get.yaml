@@ -1,5 +1,6 @@
 name: pos/posture/get
 description: Get current device posture for specified source ID.
+interface: pos
 
 request:
   target-category: 0x26

@@ -1,16 +1,5 @@
 name: pos
 
-requests:
-  - target-category: 0x26
-    command-ids:
-      - 0x01    # get list of available IDs
-      - 0x02    # get posture for ID
-
-events:
-  - target-category: 0x26
-    command-ids:
-      - 0x03    # posture change event
-
 description: |
   Interface to obtain device posture information and receive notifications
   about device posture changes.

@@ -1,5 +1,6 @@
 name: pos/sources/list
 description: Get list of available posture source IDs.
+interface: pos
 
 request:
   target-category: 0x26

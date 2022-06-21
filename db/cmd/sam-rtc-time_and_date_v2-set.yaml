@@ -1,5 +1,6 @@
 name: sam/rtc/time_and_date_v2/set
 description: Set time and date of real-time clock (ver. 2).
+interface: sam/rtc
 
 request:
   target-category: 0x01

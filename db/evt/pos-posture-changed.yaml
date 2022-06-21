@@ -1,5 +1,6 @@
 name: pos/posture/changed
 description: Device posture state change event.
+interface: pos
 
 event:
   target-category: 0x26

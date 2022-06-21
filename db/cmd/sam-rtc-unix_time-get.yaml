@@ -1,5 +1,6 @@
 name: sam/rtc/unix_time/get
 description: Get UNIX timestamp from real-time clock.
+interface: sam/rtc
 
 request:
   target-category: 0x01
