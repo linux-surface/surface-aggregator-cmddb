@@ -100,6 +100,8 @@ target-categories:
 
   - name: USC
     id: 0x1b
+    description: |
+      USB-C subsystem. Manages USB-C power delivery (details are yet unclear).
 
   - name: PEN
     id: 0x1c
