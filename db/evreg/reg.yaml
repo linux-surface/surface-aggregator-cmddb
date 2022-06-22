@@ -1,7 +1,7 @@
 name: reg
 description: Extended event registry.
 
-notes: 
+note:
   Has been observed on target IDs 1 and 2. 
 
 commands:
