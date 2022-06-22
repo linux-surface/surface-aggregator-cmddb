@@ -1,0 +1,19 @@
+name: tmp/sensors
+
+description: |
+  Thermal sensor interface.
+
+  This interface supports reading thermal sensors and setting up trip-points
+  for thermal notifications. Available sensors should first be queried via the
+  tmp/sensors/list command. Individual sensors are addressed with instance IDs.
+  Valid sensor instance IDs start with one. A maximum of 16 sensors are
+  supported. For general (sensor-independent) functions, an instance-id of zero
+  is used.
+
+  Trip points can be configured via tmp/sensors/set_trip_point, which support
+  setting of both upper and lower thresholds. Notifications will be sent when
+  the temperature either gets higher than the upper or lower than the lower
+  threshold.
+
+  All temperature values are given in 1/100 degree celsius, i.e. conversion to
+  degree celsius requires dividing by 100.

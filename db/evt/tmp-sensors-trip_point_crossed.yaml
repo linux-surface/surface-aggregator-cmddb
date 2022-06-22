@@ -1,0 +1,13 @@
+name: tmp/sensors/trip_point_crossed
+description: Thermal sensor trip point temperature crossed
+interface: tmp/sensors
+
+note: |
+  This event does not have any payload.
+
+event:
+  target-category: 0x03
+  target-id:       0x01
+  instance-id:     sensor_id
+  command-id:      0x0b
+  registry:        sam

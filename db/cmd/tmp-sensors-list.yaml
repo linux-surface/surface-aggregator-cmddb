@@ -1,0 +1,22 @@
+name: tmp/sensors/list
+description: Return a bitset representing a list of all available sensors.
+interface: tmp/sensors
+
+request:
+  target-category: 0x03
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x04
+
+response:   # 4 bytes
+  - name: sensors
+    type: u16
+    desc: |
+      Bitset indicating available sensors.
+
+      Available sensors are marked with a set bit at the respective position,
+      following the usual bit-indexing from least- to most-significant bit.
+      Supports up to 16 sensors at most.
+
+      Note that sensor instance IDs start at one, i.e. BIT(0) returns whether
+      the sensor with instance ID 1 is present.

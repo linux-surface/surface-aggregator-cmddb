@@ -1,0 +1,41 @@
+name: tmp/sensors/set_trip_point
+description: Set trip point temperature for specified sensor.
+interface: tmp/sensors
+
+note: |
+  Payload seems to be optional. Maybe no payload clears the trip point.
+
+  Events are sent immediately when the newly set thresholds have already been
+  crossed (larger than upper threshold or lower than lower threshold) before
+  setting them.
+
+request:
+  target-category: 0x03
+  target-id:       0x01
+  instance-id:     sensor_id
+  command-id:      0x09
+
+payload:    # 4 bytes
+  - name: upper_threshold
+    type: u16
+    desc: |
+      Upper temperature threshold. A "trip point corssed" notification will be
+      sent if the temperature of the specified sensor gets larger than this
+      threshold value.
+
+      Temperature values are given in 1/100 degree celsius.
+
+  - name: lower_threshold
+    type: u16
+    desc: |
+      Lower temperature threshold. A "trip point corssed" notification will be
+      sent if the temperature of the specified sensor gets smaller than this
+      threshold value.
+
+      Temperature values are given in 1/100 degree celsius.
+
+response:   # 1 byte
+  - name: status
+    type: u8
+    desc: |
+      Zero on success, nonzero on failure (e.g. thresholds reversed).

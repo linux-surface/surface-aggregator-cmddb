@@ -1,0 +1,18 @@
+name: tmp/sensors/read
+description: Read current temperature from the given sensor.
+interface: tmp/sensors
+
+request:
+  target-category: 0x03
+  target-id:       0x01
+  instance-id:     sensor_id
+  command-id:      0x01
+
+response:   # 2 bytes
+  - name: temperature
+    type: u16
+    desc: |
+      Temperature reported by sensor.
+      
+      The temperature is given in 1/100 degree celsius, i.e. conversion to
+      degree celsius requires dividing by 100.
