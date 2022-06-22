@@ -1,0 +1,16 @@
+name: tmp/profile/set
+description: Set the platform profile/performance mode.
+interface: tmp/profile
+
+# TODO: validate
+
+request:
+  target-category: 0x03
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x03
+
+payload:    # 4 bytes
+  - name: profile
+    type: u32
+    desc: The new platform profile/performance mode ID to be set.

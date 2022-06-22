@@ -1,0 +1,18 @@
+name: tmp/profile
+
+description: |
+  Platform/performance profile interface.
+
+  The performance profile controls various performance states via SAM. Specific
+  effects vary from device to device and are somewhat unclear. On the Surface
+  Book 2, for example, the performance profile controls the fan curve for the
+  discrete GPU cooling fan.
+
+  Known performance profile IDs are provided below:
+
+    | Value | Description used in Windows | Notes                                          |
+    |-------|-----------------------------|------------------------------------------------|
+    |  0x01 | Recommended                 | Default profile                                |
+    |  0x02 | Battery Saver               | Only available on Windows with AC disconnected |
+    |  0x03 | Better Performance          |                                                |
+    |  0x04 | Best Performance            |                                                |

@@ -1,0 +1,22 @@
+name: tmp/profile/get
+description: Get the current platform profile/performance mode.
+interface: tmp/profile
+
+request:
+  target-category: 0x03
+  target-id:       0x01
+  instance-id:     0x00
+  command-id:      0x02
+
+response:   # 8 bytes
+  - name: profile
+    type: u32
+    desc: The current platform profile/performance mode ID.
+
+  - name: unknown1
+    type: u16
+    desc: Unknown. Seems to be always 1.
+
+  - name: unknown2
+    type: u16
+    desc: Unknown. Seems to be always equal to `profile`.
