@@ -17,7 +17,7 @@ request:
 
 payload:    # 4 bytes
   - name: upper_threshold
-    type: u16
+    type: i16
     desc: |
       Upper temperature threshold. A "trip point corssed" notification will be
       sent if the temperature of the specified sensor gets larger than this
@@ -26,7 +26,7 @@ payload:    # 4 bytes
       Temperature values are given in 1/100 degree celsius.
 
   - name: lower_threshold
-    type: u16
+    type: i16
     desc: |
       Lower temperature threshold. A "trip point corssed" notification will be
       sent if the temperature of the specified sensor gets smaller than this

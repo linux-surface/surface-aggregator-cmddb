@@ -16,4 +16,5 @@ description: |
   threshold.
 
   All temperature values are given in 1/100 degree celsius, i.e. conversion to
-  degree celsius requires dividing by 100.
+  degree celsius requires dividing by 100. Valid temperature values range from
+  0 to i16::max. Negative values are not supported.

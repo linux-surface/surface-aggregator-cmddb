@@ -10,7 +10,7 @@ request:
 
 response:   # 2 bytes
   - name: temperature
-    type: u16
+    type: i16
     desc: |
       Temperature reported by sensor.
       
