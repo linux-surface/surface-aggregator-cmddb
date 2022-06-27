@@ -3,11 +3,12 @@ description: Set trip point temperatures for specified sensor.
 interface: tmp/sensors
 
 note: |
-  Payload seems to be optional. Maybe no payload clears the trip point.
-
   Events are sent immediately when the newly set thresholds have already been
   crossed (larger than upper threshold or lower than lower threshold) before
   setting them.
+
+  Set thresholds to `upper = i16::max_value()` and `lower = 0` to effectively
+  disable trip points. This is the default after boot.
 
 request:
   target-category: 0x03
