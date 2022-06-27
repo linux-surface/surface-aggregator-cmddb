@@ -1,5 +1,5 @@
-name: tmp/sensors/set_trip_point
-description: Set trip point temperature for specified sensor.
+name: tmp/sensors/trip_point/set
+description: Set trip point temperatures for specified sensor.
 interface: tmp/sensors
 
 note: |

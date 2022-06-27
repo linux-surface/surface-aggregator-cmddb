@@ -1,0 +1,28 @@
+name: tmp/sensors/trip_point/get
+description: Get trip point temperatures for specified sensor.
+interface: tmp/sensors
+
+request:
+  target-category: 0x03
+  target-id:       0x01
+  instance-id:     sensor_id
+  command-id:      0x0a
+
+response:   # 4 bytes
+  - name: upper_threshold
+    type: u16
+    desc: |
+      Upper temperature threshold. A "trip point corssed" notification will be
+      sent if the temperature of the specified sensor gets larger than this
+      threshold value.
+
+      Temperature values are given in 1/100 degree celsius.
+
+  - name: lower_threshold
+    type: u16
+    desc: |
+      Lower temperature threshold. A "trip point corssed" notification will be
+      sent if the temperature of the specified sensor gets smaller than this
+      threshold value.
+
+      Temperature values are given in 1/100 degree celsius.
