@@ -7,21 +7,54 @@ description: |
   Usage
   -----
 
-  The posture subsystem seems to support multiple sensor/source IDs. A list of
-  available sources can be obtained via `pos/sources/list`. Posture values can
-  be queried via `pos/posture/get`, to which a valid source ID must be
-  provided. Therefore general usage is first getting/validating the source ID
-  and then getting the posture value using that ID.
+  Posture states consist of a source ID and a posture value. The source ID
+  defines the type of sensor / source / component of which the posture can be
+  changed. For example, the type-cover uses a different ID than the Surface
+  Laptop Studio display as it can assume different postures. The set of
+  possible posture values is directly tied to the source ID. 
 
-  Surface Laptop Studio
-  ---------------------
+  Although it has not been observed yet, the posture subsystem seems supports
+  multiple source IDs in paralle.
+  
+  A list of available sources can be obtained via `pos/sources/list`. Posture
+  values can be queried via `pos/posture/get`, to which a valid source ID must
+  be provided. Therefore, general usage is first getting/validating the source
+  ID and then getting the posture value using that ID.
+
+  Known Source IDs
+  ----------------
+
+    | Value | Device / Description                                |
+    |-------|-----------------------------------------------------|
+    |     0 | Type-Cover (as found on the Surface Pro 9)          |
+    |     3 | Surface Laptop Studio                               |
+
+  Source 0: Type-Cover
+  --------------------
+
+  On newer Surface Pro devices (the Surface Pro 9 and potentially later
+  generations), the type-cover provides a posture source with ID 0. The KIP
+  interface providing a similar interface on prior generations (e.g., the
+  Surface Pro X) is no longer available. Observed posture state values for this
+  source are
+
+    | Value | Description                                         |
+    |-------|-----------------------------------------------------|
+    |     1 | Cover disconnected                                  |
+    |     2 | Cover/lid closed                                    |
+    |     3 | Laptop mode                                         |
+    |     4 | Canvas/slate mode (cover folded back partially)     |
+    |     5 | Folded-back (cover folded back fully)               |
+
+  Source 3: Surface Laptop Studio
+  -------------------------------
 
   The Surface Laptop Studio seems to support a single posture source with ID 3.
   Observed posture state values for this source are
 
     | Value | Description                                         |
     |-------|-----------------------------------------------------|
-    |     0 | Laptop mode with lid closed.                        |
-    |     1 | Laptop mode with lid open (i.e., normal operation). |
-    |     2 | Slate or flipped mode.                              |
-    |     3 | Tablet mode (flipped display, lid fully closed).    |
+    |     0 | Laptop mode with lid closed                         |
+    |     1 | Laptop mode with lid open (i.e., normal operation)  |
+    |     2 | Slate or flipped mode                               |
+    |     3 | Tablet mode (flipped display, lid fully closed)     |
